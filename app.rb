@@ -70,7 +70,7 @@ class CadetService < Sinatra::Base
   # API handlers
   get '/api/v1/?*' do
     status 400
-    'Simplecadet api/v2 is deprecated: please use <a href="/api/v2/">api/v2</a>'
+    'Simplecadet api/v1 is deprecated: please use <a href="/api/v2/">api/v2</a>'
   end
 
   get '/api/v2/?' do
