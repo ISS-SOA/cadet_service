@@ -47,13 +47,6 @@ class CadetService < Sinatra::Base
       end
     end
 
-    def current_page?(path = ' ')
-      path_info = request.path_info
-      path_info += ' ' if path_info == '/'
-      request_path = path_info.split '/'
-      request_path[1] == path
-    end
-
     def new_tutorial(req)
       tutorial = Tutorial.new
       tutorial.description = req['description'].to_json
@@ -74,7 +67,7 @@ class CadetService < Sinatra::Base
   end
 
   get '/api/v2/?' do
-    'CadetService api/v2 is up and working'
+    'CadetService /api/v2 is up and working'
   end
 
   get '/api/v2/cadet/:username.json' do
